@@ -1,0 +1,41 @@
+package canchaPoo;
+
+import javax.swing.*;
+
+public class Procesos {
+    int numer;
+    int i, neg = 0, par = 0;
+    
+    /*La clase "Procesos" tiene tres variables: "numer" (que representa el número ingresado por el usuario), 
+     "neg" (que representa la cantidad de números negativos) y "par" (que representa la cantidad de números pares).*/
+
+    public void entrada() {
+        for (i = 0; i < 5; i++) {
+            numer = ingresarDatos("Digite 1 número");
+
+            if (numer % 2 == 0) {
+                par++;
+            }
+
+            if (numer < 0) {
+                neg++;
+            }
+        }
+        
+        /*El método "entrada" utiliza un bucle "for" para repetir cinco veces el proceso de pedir un número al usuario.
+          Después de que el usuario ingresa un número, el programa verifica si es par o negativo.
+          Si el número es par (es decir, divisible por 2), se incrementa la variable "par" en uno.
+		  Si el número es negativo (es decir, menor que cero), se incrementa la variable "neg" en uno.*/
+
+        JOptionPane.showMessageDialog(null, "El número de números pares es: " + par +
+                " y el número de números negativos es: " + neg);
+    }
+
+    public static int ingresarDatos(String mensaje) {
+        String cadena = JOptionPane.showInputDialog(null, mensaje);
+        int valor = Integer.parseInt(cadena);
+        return valor;
+    }
+}
+
+
